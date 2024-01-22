@@ -4,7 +4,7 @@ This is a prototype repository for compatibility specifications that are being w
 
 ## JSON Schema Specifications
 
- - [schema.json]schema.json) is used to validate the format of a json defining compatibiilty.
+ - [schema.json](schema.json) is used to validate the format of a json defining compatibiilty.
  - [definition-schema.json](definition-schema.json) is to validate the format of the keys for each namespace (in the subdirectories here) 
 
 Both of the above are based on [Proposal C](https://github.com/opencontainers/wg-image-compatibility/pull/8) of the Image Compatibility working group, and everything is subject to change. This repository is for prototyping only.
