@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Schema for the definitions of the known labels",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "compatibilities": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "$comment": "Version of the metadata namespace",
+          "type": "string"
+        },
+        "patternProperties": {
+          "([\\w]*)": {
+            "annotations": {
+              "$comment": "Key value pairs for a given namespace.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "patternProperties": {
+                  "\\w[\\w-]*": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

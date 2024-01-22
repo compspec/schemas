@@ -1,0 +1,14 @@
+{
+    "compatibilities": {
+        "version": "0.0.0",
+        "io.archspec.cpu": { 
+             "annotations": [
+                 "family",
+                 "model",
+                 "target",
+                 "vendor"               
+             ]
+         }
+    }
+}
+
