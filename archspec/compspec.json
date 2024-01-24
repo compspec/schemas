@@ -1,7 +1,7 @@
 {
     "compatibilities": {
-        "version": "0.0.0",
         "io.archspec.cpu": { 
+             "version": "0.0.0",
              "annotations": [
                  "family",
                  "model",

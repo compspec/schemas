@@ -1,7 +1,7 @@
 {
     "compatibilities": {
-        "version": "0.0.0",
         "org.supercontainers.mpi": { 
+             "version": "0.0.0",
              "annotations": [
                  "implementation",
                  "portability.optimization",
@@ -9,6 +9,7 @@
              ]
          },
         "org.supercontainers.hardware.gpu": { 
+             "version": "0.0.0",
              "annotations": [
                  "driver.version",
                  "cuda.version",
@@ -16,16 +17,19 @@
              ]
          },
         "org.supercontainers.communication": { 
+             "version": "0.0.0",
              "annotations": [
                  "framework"
              ]
          },
         "org.supercontainers.openmpi": { 
+             "version": "0.0.0",
              "annotations": [
                  "version"
              ]
          },
         "org.supercontainers.libfabric": { 
+             "version": "0.0.0",
              "annotations": [
                  "abi.version"
              ]

@@ -6,13 +6,13 @@
   "properties": {
     "compatibilities": {
       "type": "object",
-      "properties": {
-        "version": {
-          "$comment": "Version of the metadata namespace",
-          "type": "string"
-        },
-        "patternProperties": {
-          "([\\w]*)": {
+      "patternProperties": {
+        "([\\w]*)": {
+          "properties": {
+            "version": {
+              "$comment": "Version of the metadata namespace",
+              "type": "string"
+            },
             "annotations": {
               "$comment": "Acceptable keys for a given namespace.",
               "type": "array",
