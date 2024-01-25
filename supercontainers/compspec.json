@@ -4,6 +4,7 @@
              "version": "0.0.0",
              "annotations": [
                  "implementation",
+                 "version",
                  "portability.optimization",
                  "porability.mode"
              ]
@@ -20,12 +21,6 @@
              "version": "0.0.0",
              "annotations": [
                  "framework"
-             ]
-         },
-        "org.supercontainers.openmpi": { 
-             "version": "0.0.0",
-             "annotations": [
-                 "version"
              ]
          },
         "org.supercontainers.libfabric": { 
