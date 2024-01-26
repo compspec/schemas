@@ -9,9 +9,19 @@
                  "porability.mode"
              ]
          },
+        "org.supercontainers.os": { 
+             "version": "0.0.0",
+             "annotations": [
+                 "name",
+                 "release",
+                 "vendor",
+                 "version"
+             ]
+         },
         "org.supercontainers.hardware.gpu": { 
              "version": "0.0.0",
              "annotations": [
+                 "enabled",
                  "driver.version",
                  "cuda.version",
                  "architecture"
