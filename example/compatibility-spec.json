@@ -1,0 +1,33 @@
+{
+  "version": "0.0.0",
+  "kind": "CompatibilitySpec",
+  "metadata": {
+    "name": "lammps-prototype"
+  },
+  "compatibilities": [
+    {
+      "name": "io.archspec",
+      "version": "0.0.0",
+      "schema": "https://raw.githubusercontent.com/supercontainers/compspec/main/archspec/compspec.json",
+      "attributes": {
+        "cpu.model": "13th Gen Intel(R) Core(TM) i5-1335U",
+        "cpu.target": "amd64",
+        "cpu.vendor": "GenuineIntel"
+      }
+    },
+    {
+      "name": "org.supercontainers",
+      "version": "0.0.0",
+      "schema": "https://raw.githubusercontent.com/supercontainers/compspec/main/supercontainers/compspec.json",
+      "attributes": {
+        "mpi.implementation": "mpich",
+        "mpi.version": "4.1.1",
+        "os.name": "Ubuntu 22.04.3 LTS",
+        "os.release": "22.04.3",
+        "os.vendor": "ubuntu",
+        "os.version": "22.04",
+        "hardware.gpu.available": "yes"
+      }
+    }
+  ]
+}

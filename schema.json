@@ -4,24 +4,53 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "compatibilities": {
+    "version": {
+      "$comment": "Version of the compatibility spec",
+      "type": "string"
+    },
+    "kind": {
+      "$comment": "kind of compatibility spec",
+      "type": "string"
+    },
+    "metadata": {
+      "$comment": "metadata for the compatiblity spec",
       "type": "object",
-      "patternProperties": {
-        "([\\w]*)": {
-          "properties": {
-            "version": {
-              "$comment": "Version of the metadata namespace",
-              "type": "string"
-            },
-            "annotations": {
-              "$comment": "Key value pairs for a given namespace.",
-              "type": "array",
-              "items": {
-                "type": "object",
-                "patternProperties": {
-                  "\\w[\\w-]*": {
-                    "type": "string"
-                  }
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "compatibilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "version", "schema", "attributes"],
+        "properties": {
+          "name": {
+            "$comment": "Name of the compatibility schema",
+            "type": "string"
+          },
+          "version": {
+            "$comment": "Version of the compatibility schema",
+            "type": "string"
+          },
+          "schema": {
+            "$comment": "web accessible public URL of the compatibility schema compspec.json",
+            "type": "string"
+          },
+          "attributes": {
+            "$comment": "Key value pairs for a given namespace.",
+            "type": "object",
+            "properties": {
+              "patternProperties": {
+                "\\w[\\w-]*": {
+                  "type": "string"
                 }
               }
             }
