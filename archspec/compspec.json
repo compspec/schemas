@@ -1,6 +1,6 @@
 {
   "graph": {
-    "id": "archspec.io",
+    "id": "io.archspec",
     "type": "compspec",
     "label": "compatibilities",
     "nodes": {
