@@ -1,14 +1,50 @@
 {
-    "compatibilities": {
-        "io.archspec.cpu": { 
-             "version": "0.0.0",
-             "annotations": [
-                 "family",
-                 "model",
-                 "target",
-                 "vendor"               
-             ]
-         }
+  "graph": {
+    "id": "io.archspec",
+    "type": "compspec",
+    "label": "compatibilities",
+    "nodes": {
+      "cpu": {
+        "label": "central processing unit (cpu)"
+      },
+      "cpu.family": {
+        "label": "cpu family"
+      },
+      "cpu.model": {
+        "label": "cpu model"
+      },
+      "cpu.target": {
+        "label": "cpu target"
+      },
+      "cpu.vendor": {
+        "label": "cpu vendor"
+      }
+    },
+    "edges": [
+      {
+        "source": "cpu",
+        "target": "cpu.family",
+        "relation": "contains"
+      },
+      {
+        "source": "cpu",
+        "target": "cpu.model",
+        "relation": "contains"
+      },
+      {
+        "source": "cpu",
+        "target": "cpu.target",
+        "relation": "contains"
+      },
+      {
+        "source": "cpu",
+        "target": "cpu.vendor",
+        "relation": "contains"
+      }
+    ],
+    "metadata": {
+      "version": "0.0.0",
+      "source": "https://github.com/supercontainers/compspec"
     }
+  }
 }
-
