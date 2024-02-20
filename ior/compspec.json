@@ -1,0 +1,366 @@
+{
+  "graph": {
+    "id": "hpc.ior",
+    "type": "compspec",
+    "label": "compatibilities",
+    "nodes": {
+      "modules": {
+        "label": "IOR modules"
+      },
+      "module.cephfs": {
+        "label": "cephfs module"
+      },
+      "module.cephfs.olazy": {
+        "label": "enable Lazy I/O"
+      },
+      "module.mmap": {
+        "label": "MMAP module"
+      },
+      "module.mmap.madv_dont_need": {
+        "label": "Use advise don't need"
+      },
+      "module.mmap.madv_pattern": {
+        "label": "Use advise to indicate the pattern random/sequential"
+      },
+      "module.ncmpi": {
+        "label": "NCMPI module"
+      },
+      "module.ncmpi.preallocate": {
+        "label": "Preallocate file size"
+      },
+      "module.ncmpi.use_strided_datatype": {
+        "label": "put strided access into datatype"
+      },
+      "module.ncmpi.use_file_view": {
+        "label": "Use MPI_File_set_view"
+      },
+      "module.mpiio": {
+        "label": "Module MPIIO"
+      },
+      "module.mpiio.preallocate": {
+        "label": "Preallocate file size"
+      },
+      "module.mpiio.use_strided_datatype": {
+        "label": "put strided access into datatype"
+      },
+      "module.mpiio.use_file_view": {
+        "label": "Use MPI_File_set_view"
+      },
+      "module.dummy": {
+        "label": "Module DUMMY"
+      },
+      "module.dummy.delay_only_rank0": {
+        "label": "Delay only Rank0"
+      },
+      "module.dummy.delay_create_rank0": {
+        "label": "Delay per create in usec"
+      },
+      "module.dummy.delay_close0": {
+        "label": "Delay per close in usec"
+      },
+      "module.dummy.delay_sync0": {
+        "label": "Delay for sync in usec"
+      },
+      "module.dummy.delay_xfer0": {
+        "label": "Delay per xfer in usec"
+      },
+      "module.posix": {
+        "label": "POSIX module"
+      },
+      "module.posix.odirect": {
+        "label": "Direct I/O Mode"
+      },
+      "module.posix.rangelocks": {
+        "label": "Use range locks (read locks for read ops)"
+      },
+      "options": {
+        "label": "Options for running IOR"
+      },
+      "options.api": {
+        "label": "API for I/O [POSIX|PMDK|DUMMY|MPIIO|NCMPI|MMAP|CEPHFS|Gfarm]"
+      },
+      "options.blocksize": {
+        "label": "contiguous bytes to write per task  (e.g.: 8, 4k, 2m, 1g)"
+      },
+      "options.inter_test_delay": {
+        "label": "delay between reps in seconds"
+      },
+      "options.deadline_for_stonewalling": {
+        "label": "seconds before stopping write or read phase"
+      },
+      "options.stonewalling_wear_out": {
+        "label": "once the stonewalling timeout is over, all process finish to access the amount of data"
+      },
+      "options.stonewalling_wear_out_iterations": {
+        "label": "stop after processing this number of iterations, needed for reading data back written with"
+      },
+      "options.min_time_duration": {
+        "label": "minimum Runtime for the run (will repeat from beginning of the file if time is not yet over)"
+      },
+      "options.script_file": {
+        "label": "test script name"
+      },
+      "options.set_timestamp_signature": {
+        "label": "set value for time stamp signature/random seed"
+      },
+      "options.repetitions": {
+        "label": "number of repetitions of test"
+      },
+      "options.outlier_threshold": {
+        "label": "warn on outlier N seconds from mean"
+      },
+      "options.datapacket_type": {
+        "label": "type of packet that will be created [offset|incompressible|timestamp|random|o|i|t|r]"
+      },
+      "options.num_tasks": {
+        "label": "number of tasks that are participating in the test (overrides MPI)"
+      },
+      "options.test_file": {
+        "label": "full name for test"
+      },
+      "options.task_per_node_offset": {
+        "label": "for read tests use with -C & -Z options (-C constant N, -Z at least N)"
+      },
+      "options.segment_count": {
+        "label": "number of segments"
+      },
+      "options.transfer_size": {
+        "label": "size of transfer in bytes (e.g.: 8, 4k, 2m, 1g)"
+      },
+      "options.max_time_duration": {
+        "label": "max time in minutes executing repeated test; it aborts only between iterations and not within a test!"
+      },
+      "options.reorder_task_random_seed": {
+        "label": "random seed for -Z option"
+      },
+      "options.random_prefill": {
+        "label": "For random -z access only: Prefill the file with this blocksize, e.g., 2m"
+      },
+      "options.random_offset_seed": {
+        "label": "The seed for -z"
+      }
+    },
+
+    "edges": [
+      {
+        "source": "modules",
+        "target": "modules.cephfs",
+        "relation": "has-module"
+      },
+      {
+        "source": "modules.cephfs",
+        "target": "modules.cephfs.olazy",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules",
+        "target": "modules.mmap",
+        "relation": "has-module"
+      },
+      {
+        "source": "modules.mmap",
+        "target": "modules.mmap.madv_dont_need",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules.mmap",
+        "target": "modules.mmap.madv_pattern",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules",
+        "target": "modules.ncmpi",
+        "relation": "has-module"
+      },
+      {
+        "source": "modules.ncmpi",
+        "target": "modules.ncmpi.preallocate",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules.ncmpi",
+        "target": "modules.ncmpi.use_strided_datatype",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules.ncmpi",
+        "target": "modules.ncmpi.use_file_view",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules",
+        "target": "modules.mpiio",
+        "relation": "has-module"
+      },
+      {
+        "source": "modules.mpiio",
+        "target": "modules.mpiio.preallocate",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules.mpiio",
+        "target": "modules.mpiio.preallocate",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules.mpiio",
+        "target": "modules.mpiio.use_strided_datatype",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules.mpiio",
+        "target": "modules.mpiio.use_file_view",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules",
+        "target": "modules.dummy",
+        "relation": "has-module"
+      },
+      {
+        "source": "modules.dummy",
+        "target": "modules.dummy.delay_only_rank0",
+        "relation": "has-propery"
+      },
+      {
+        "source": "modules.dummy",
+        "target": "modules.dummy.delay_create_rank0",
+        "relation": "has-propery"
+      },
+      {
+        "source": "modules.dummy",
+        "target": "modules.dummy.delay_close0",
+        "relation": "has-propery"
+      },
+      {
+        "source": "modules.dummy",
+        "target": "modules.dummy.delay_sync0",
+        "relation": "has-propery"
+      },
+      {
+        "source": "modules.dummy",
+        "target": "modules.dummy.delay_xfer0",
+        "relation": "has-propery"
+      },
+      {
+        "source": "modules",
+        "target": "modules.posix",
+        "relation": "has-module"
+      },
+      {
+        "source": "modules.posix",
+        "target": "modules.posix.odirect",
+        "relation": "has-property"
+      },
+      {
+        "source": "modules.posix",
+        "target": "modules.posix.rangelocks",
+        "relation": "has-property"
+      },
+      {
+        "source": "options",
+        "target": "options.api",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.blocksize",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.inter_test_delay",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.deadline_for_stonewalling",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.stonewalling_wear_out",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.stonewalling_wear_out_iterations",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.min_time_duration",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.script_file",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.set_timestamp_signature",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.repetitions",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.outlier_threshold",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.num_tasks",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.test_file",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.task_per_node_offset",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.segment_count",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.transfer_size",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.max_time_duration",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.reorder_task_random_seed",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.random_prefill",
+        "relation": "has-option"
+      },
+      {
+        "source": "options",
+        "target": "options.random_offset_seed",
+        "relation": "has-option"
+      }
+    ],
+    "metadata": {
+      "version": "0.0.0",
+      "source": "https://github.com/supercontainers/compspec"
+    }
+  }
+}
