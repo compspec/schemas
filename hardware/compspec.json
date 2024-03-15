@@ -1,0 +1,79 @@
+{
+  "graph": {
+    "id": "hardware",
+    "type": "compspec",
+    "label": "compatibilities",
+    "nodes": {
+      "hardware": {
+        "label": "hardware"
+      },
+      "hardware.gpu": {
+        "label": "gpu hardware"
+      },
+      "hardware.gpu.enabled": {
+        "label": "true if gpu is enabled"
+      },
+      "hardware.gpu.driver": {
+        "label": "gpu driver"
+      },
+      "hardware.gpu.architecture": {
+        "label": "gpu architecture"
+      },
+      "hardware.gpu.driver.version": {
+        "label": "gpu driver version"
+      },
+      "hardware.gpu.cuda": {
+        "label": "gpu cuda"
+      },
+      "hardware.gpu.cuda.version": {
+        "label": "cuda version"
+      }
+    },
+    "edges": [
+      {
+        "source": "hardware",
+        "target": "hardware.gpu",
+        "relation": "contains"
+      },
+      {
+        "source": "hardware.gpu",
+        "target": "hardware.gpu.enabled",
+        "relation": "contains"
+      },
+      {
+        "source": "hardware.gpu",
+        "target": "hardware.gpu.driver",
+        "relation": "contains"
+      },
+      {
+        "source": "hardware.gpu.driver",
+        "target": "hardware.gpu.driver.version",
+        "relation": "contains"
+      },
+      {
+        "source": "hardware.gpu",
+        "target": "hardware.gpu.architecture",
+        "relation": "contains"
+      },
+      {
+        "source": "hardware.gpu",
+        "target": "hardware.gpu.version",
+        "relation": "contains"
+      },
+      {
+        "source": "hardware.gpu",
+        "target": "hardware.gpu.cuda",
+        "relation": "contains"
+      },
+      {
+        "source": "hardware.gpu.cuda",
+        "target": "hardware.gpu.cuda.version",
+        "relation": "contains"
+      }
+    ],
+    "metadata": {
+      "version": "0.0.0",
+      "source": "https://github.com/compspec/schemas"
+    }
+  }
+}
