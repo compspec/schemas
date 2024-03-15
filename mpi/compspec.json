@@ -1,0 +1,58 @@
+{
+  "graph": {
+    "id": "mpi",
+    "type": "compspec",
+    "label": "compatibilities",
+    "nodes": {
+      "mpi": {
+        "label": "message passing interface (mpi)"
+      },
+      "mpi.implementation": {
+        "label": "mpi implementation"
+      },
+      "mpi.version": {
+        "label": "mpi version"
+      },
+      "mpi.portability": {
+        "label": "mpi portability attributes"
+      },
+      "mpi.portability.optimization": {
+        "label": "mpi portability optimization"
+      },
+      "mpi.portability.mode": {
+        "label": "mpi portability mode"
+      }
+    },
+    "edges": [
+      {
+        "source": "mpi",
+        "target": "mpi.version",
+        "relation": "contains"
+      },
+      {
+        "source": "mpi",
+        "target": "mpi.implementation",
+        "relation": "contains"
+      },
+      {
+        "source": "mpi",
+        "target": "mpi.portability",
+        "relation": "contains"
+      },
+      {
+        "source": "mpi.portability",
+        "target": "mpi.portability.optimization",
+        "relation": "contains"
+      },
+      {
+        "source": "mpi.portability",
+        "target": "mpi.portability.mode",
+        "relation": "contains"
+      }
+    ],
+    "metadata": {
+      "version": "0.0.0",
+      "source": "https://github.com/compspec/schemas"
+    }
+  }
+}

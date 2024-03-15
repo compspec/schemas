@@ -1,4 +1,4 @@
-# Compspec
+# Compspec Schemas
 
 This is a prototype repository for compatibility specifications that are being worked on by the [OCI compatibility working group](https://github.com/opencontainers/wg-image-compatibility). While that work is underway (and the structure and format of these metadata to be determined. For the time being we have defined two things:
 
@@ -14,7 +14,7 @@ Both of the above are based on proposals [C](https://github.com/opencontainers/w
 
 ## Organization
 
-The different subdirectories of compatibility families (sets of metadata owned by different groups).
+The different subdirectories of compatibility families (sets of metadata owned by different groups). We originally had a nested group under supercontainers, and these have been separated out to distinguish a family of attributes like MPI from another like gpu. The supercontainers is also removed for the time being to brand it as a generic kind of subsystem.
 
 Likely these metadata can be moved to be owned properly by the group. They are all kept here for the time being for ease of access. Also for the time being, we have represented the entire set of labels (and smaller namespaces) for one compatibiilty family (e.g., supercontainers) in one JSON file, and of course this is subject to change. 
 

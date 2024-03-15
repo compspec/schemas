@@ -1,0 +1,50 @@
+{
+  "graph": {
+    "id": "os",
+    "type": "compspec",
+    "label": "compatibilities",
+    "nodes": {
+      "os": {
+        "label": "operating system"
+      },
+      "os.name": {
+        "label": "operating system name"
+      },
+      "os.release": {
+        "label": "operating system release"
+      },
+      "os.vendor": {
+        "label": "operating system vendor"
+      },
+      "os.version": {
+        "label": "operating system version"
+      }
+    },
+    "edges": [
+      {
+        "source": "os",
+        "target": "os.name",
+        "relation": "contains"
+      },
+      {
+        "source": "os",
+        "target": "os.release",
+        "relation": "contains"
+      },
+      {
+        "source": "os",
+        "target": "os.vendor",
+        "relation": "contains"
+      },
+      {
+        "source": "os",
+        "target": "os.version",
+        "relation": "contains"
+      }
+    ],
+    "metadata": {
+      "version": "0.0.0",
+      "source": "https://github.com/supercontainers/compspec"
+    }
+  }
+}

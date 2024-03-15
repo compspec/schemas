@@ -1,0 +1,34 @@
+{
+  "graph": {
+    "id": "network",
+    "type": "compspec",
+    "label": "compatibilities",
+    "nodes": {
+      "network": {
+        "label": "network"
+      },
+      "network.communication": {
+        "label": "communication"
+      },
+      "network.communication.framework": {
+        "label": "communication framework"
+      }
+    },
+    "edges": [
+      {
+        "source": "network",
+        "target": "network.communication",
+        "relation": "contains"
+      },
+      {
+        "source": "network.communication",
+        "target": "network.communication.framework",
+        "relation": "contains"
+      }
+    ],
+    "metadata": {
+      "version": "0.0.0",
+      "source": "https://github.com/supercontainers/compspec"
+    }
+  }
+}
